@@ -40,8 +40,9 @@ def translate(text, tokenizer, model, max_length=512, num_beams=4):
     return tokenizer.decode(generated[0], skip_special_tokens=True)
 
 
-st.title("UN Paragraphs Translator (fine-tuned MarianMT)")
-st.caption("Auto-detects the language you type and translates it to the other one.")
+st.title("UN Paragraphs Alligned Translator")
+st.caption("Unlike most of MT this is not only sentence alligned translator.")
+st.caption("Works better on the united nations documents or the UN style.")
 
 text = st.text_area("Enter text to translate / أدخل النص", height=150)
 
@@ -57,18 +58,13 @@ if st.button("Translate / ترجم"):
             direction_label = "Arabic -> English" if direction_key == "ar-en" else "English -> Arabic"
             st.info(f"Detected direction: **{direction_label}**")
 
-            with st.spinner("Loading model..."):
-                tokenizer, model = load_model(MODEL_PATHS[direction_key])
-
             with st.spinner("Translating..."):
                 result = translate(text, tokenizer, model)
 
             st.success("Translation")
             st.write(result)
 
-with st.expander("How the auto-detection works"):
-    st.write(
-        "The app counts Arabic letters (U+0600-U+06FF) versus English letters (A-Z, a-z) "
-        "in what you typed. Whichever script has more characters decides the model used: "
-        "more Arabic -> Arabic->English model, more English -> English->Arabic model."
+with st.expander("The app auto detects your language"):
+    st.write("
+        "no need to manually choose the translation side"
     )

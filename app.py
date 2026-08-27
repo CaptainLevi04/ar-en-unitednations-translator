@@ -60,7 +60,7 @@ def translate(text, tokenizer, model, max_length=512, num_beams=4):
 
 
 st.title("Paragraphs Alligned Translator")
-st.caption("Unlike most of MT this is not only sentence alligned translator it can also translate paragraphs.")
+st.caption("Unlike most of NMT this is not only sentence alligned translator it can also translate paragraphs.")
 
 
 text = st.text_area(

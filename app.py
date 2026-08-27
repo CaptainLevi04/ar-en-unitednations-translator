@@ -42,7 +42,6 @@ def translate(text, tokenizer, model, max_length=512, num_beams=4):
 
 st.title("UN Paragraphs Alligned Translator")
 st.caption("Unlike most of MT this is not only sentence alligned translator.")
-st.caption("Works better on the united nations documents or the UN style.")
 
 text = st.text_area("Enter text to translate / أدخل النص", height=150)
 
@@ -65,4 +64,4 @@ if st.button("Translate / ترجم"):
             st.write(result)
 
 with st.expander("The app auto detects your language"):
-    st.write("no need to manually choose the translation side")
+    st.write("Works better on the united nations documents or the UN style.")

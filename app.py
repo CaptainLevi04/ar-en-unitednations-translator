@@ -65,6 +65,4 @@ if st.button("Translate / ترجم"):
             st.write(result)
 
 with st.expander("The app auto detects your language"):
-    st.write("
-        "no need to manually choose the translation side"
-    )
+    st.write("no need to manually choose the translation side")

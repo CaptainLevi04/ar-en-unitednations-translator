@@ -95,7 +95,7 @@ if st.button("Translate / ترجم"):
                 else "English -> Arabic"
             )
 
-            st.info(
+            st.success(
                 f"Detected direction: **{direction_label}**"
             )
 
@@ -113,7 +113,6 @@ if st.button("Translate / ترجم"):
                     model
                 )
 
-            st.success("Translation")
             st.write(result)
 
 

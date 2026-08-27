@@ -99,7 +99,7 @@ if st.button("Translate / ترجم"):
                 f"Detected direction: **{direction_label}**"
             )
 
-            with st.spinner("Loading model and translating..."):
+            with st.spinner("Translating..."):
 
                 # The model is downloaded/loaded only the first time.
                 # Streamlit caches it afterwards.
